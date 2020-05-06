@@ -3,14 +3,14 @@
 describe('OrderAItemFromHomePage', function () {
 
     before(function () {
-        cy.fixture('example').then(function (data) {
+        cy.fixture('input_data').then(function (data) {
             this.data = data
         })
     })
 
-    it('Visit the vodafone.nl Home page and verify title of the page', function () {
+    it('Visit the vodafone.nl Home page and order iphone11 yellow colour', function () {
 
-        cy.addtocart(this.data.app_url, this.data.dashboard_title_message, this.data.pick_a_phone_message)
+        cy.addtocart(this.data.app_url,this.data.dashboard_title_message,this.data.pick_a_phone_message,this.data.phone_title)
 
         //file the personal data Email
         cy.filldataform(this.data.email_id,
@@ -32,19 +32,8 @@ describe('OrderAItemFromHomePage', function () {
             this.data.bank_account_number)
         
         //Data Application
-        cy.get('[data-testid=loan-details--family-type-selector]')
-            .select('Alleenstaand').should('have.value', 'Single')
-
-        cy.get('[data-testid=loan-details--housing-costs]').type('500')
-        cy.get('#loan_details_income').type('4800')
-        cy.get('[data-testid=loan-details--submit-button]').click()
-        //Number porting No
-
-        cy.get('.js-product-name').contains('Apple iPhone 11 64GB Yellow met Red Essential 2 jaar')
-        cy.get('[data-testid=number-porting--next-step-btn]').click()
-        
-
-        //verify all details in over view page later
+        cy.applicationdataandnumberporting(this.data.Familiesamenstelling,this.data.m_status,this.data.housing_cost,
+            this.data.net_income,this.data.number_porting_page_title,this.data.phone_title)
     
     }
 

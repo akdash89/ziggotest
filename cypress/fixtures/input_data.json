@@ -2,6 +2,7 @@
   "app_url": "https://www.vodafone.nl/",
   "dashboard_title_message": "Vodafone: de beste sim only en toestel deals - supersnel 4G internet",
   "pick_a_phone_message": "Kies een telefoon",
+  "phone_title": "Apple iPhone 11 64GB Yellow",
   "email_id": "amitdash4717@gmail.com",
   "first_name": "Amit",
   "last_name": "Dash",
@@ -18,5 +19,10 @@
   "id_value": "PASSPORT",
   "id_number": "VT3C71H86",
   "id_expiry_date": "01-3-2025",
-  "bank_account_number": "NL72ABNA0800091736"
+  "bank_account_number": "NL72ABNA0800091736",
+  "Familiesamenstelling": "Alleenstaand",
+  "m_status": "Single",
+  "housing_cost": "500",
+  "net_income": "4800",
+  "number_porting_page_title": "Apple iPhone 11 64GB Yellow met Red Essential 2 jaar"
 }
