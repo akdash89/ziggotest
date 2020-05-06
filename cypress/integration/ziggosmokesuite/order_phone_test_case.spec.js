@@ -10,7 +10,7 @@ describe('OrderAItemFromHomePage', function () {
 
     it('Visit the vodafone.nl Home page and order iphone11 yellow colour', function () {
 
-        cy.addtocart(this.data.app_url,this.data.dashboard_title_message,this.data.pick_a_phone_message,this.data.phone_title)
+        cy.addtocart(this.data.app_url, this.data.dashboard_title_message, this.data.pick_a_phone_message)
 
         //file the personal data Email
         cy.filldataform(this.data.email_id,
@@ -30,13 +30,15 @@ describe('OrderAItemFromHomePage', function () {
             this.data.id_number,
             this.data.id_expiry_date,
             this.data.bank_account_number)
-        
+
         //Data Application
-        cy.applicationdataandnumberporting(this.data.Familiesamenstelling,this.data.m_status,this.data.housing_cost,
-            this.data.net_income,this.data.number_porting_page_title,this.data.phone_title)
-    
+        cy.applicationdataandnumberporting(this.data.Familiesamenstelling, this.data.m_status, this.data.housing_cost,
+            this.data.net_income, this.data.number_porting_page_title, this.data.Item_name_over_view_page)
     }
 
     )
-
+    after(function () {
+        cy.clearCookies()
+        cy.clearLocalStorage()
+    })
 })

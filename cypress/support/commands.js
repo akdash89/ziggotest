@@ -5,10 +5,10 @@ const {
     fillEmailId, selectGenderRadioBtn, fillInitialName, fillLastName, fillDateOfBirth, fillContractingPartyCellPhoneNo,
     selectInvoiceAddressCountry, fillPostalCode, fillHouseNumber, fillIdentificationNo, verifyStreatName, verifyAddressSameAsBilling,
     selectNationality, selectIdentityType, fillIdExpiryDate, fillBankAccount, submitFormBtn, verifynumberportingPagetitle, selectFamilyType, fillHousingCost,
-    fillNetincome, submitApplicationBtn, numbernextBtn
+    fillNetincome, submitApplicationBtn, numbernextBtn, itemNameOverViewPage
 } = require('./all_page_locators');
 
-Cypress.Commands.add("addtocart", (url, dashboard_title_message, pick_a_phone_message, verify_title) => {
+Cypress.Commands.add("addtocart", (url, dashboard_title_message, pick_a_phone_message) => {
     cy.visit(url)
     acceptCookiesAtDashBoard().click()
     cy.title().should('eq', dashboard_title_message)
@@ -44,7 +44,7 @@ Cypress.Commands.add("addtocart", (url, dashboard_title_message, pick_a_phone_me
             popupIwantNewSubscription().click()
         }
     })
-    titleAppleIphone64GbYellow().contains(verify_title)
+    titleAppleIphone64GbYellow().should('be.visible')
     cartContractingPartyNextBtn().click()
 })
 
@@ -89,7 +89,7 @@ Cypress.Commands.add("filldataform", (emailid,
     cy.wait(5000)
 })
 
-Cypress.Commands.add("applicationdataandnumberporting", (Families_amen_stelling, m_status, housing_cost, net_income, number_porting_page_title, verify_title) => {
+Cypress.Commands.add("applicationdataandnumberporting", (Families_amen_stelling, m_status, housing_cost, net_income, number_porting_page_title, verify_Item_title) => {
     selectFamilyType()
         .select(Families_amen_stelling).should('have.value', m_status)
     fillHousingCost().type(housing_cost)
@@ -98,5 +98,5 @@ Cypress.Commands.add("applicationdataandnumberporting", (Families_amen_stelling,
     verifynumberportingPagetitle().contains(number_porting_page_title)
     numbernextBtn().click()
     //add more to verify details of overview
-    titleAppleIphone64GbYellow().contains(verify_title)
+    itemNameOverViewPage().contains(verify_Item_title)
 })

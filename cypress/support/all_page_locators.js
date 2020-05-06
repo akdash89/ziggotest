@@ -13,7 +13,7 @@ const MODAL_ORDER_BUTTON = '[data-testid=vfz-order-button]';
 const POPUP_ORDER_BUTTON = '.col-xs-12 > .btn';
 const MODAL_I_WANT_NEW_SUBSCRIPTION = '.vfz-button';
 const POPUP_I_WANT_NEW_SUBSCRIPTION = '#cucumber-selector-postpaid-device';
-const TITLE_APPLE_IPHONE_11_64_GB_YELLOW = '.name'
+const TITLE_APPLE_IPHONE_11_64_GB_YELLOW = 'img[src*="iphone-11-64gb-yellow-front-m.png"]';
 const CART_CONTRACTING_PARTY_NEXT_BTN = '[data-testid=cart-contracting-party--next-button]';
 
 //FILL DATA FORM LOCATORS
@@ -42,6 +42,8 @@ const FILL_NET_INCOME = '#loan_details_income';
 const SUBMIT_APPLICATION_BTN = '[data-testid=loan-details--submit-button]'
 const VERIFY_NUMBER_PORTING_PAGE_TITLE = '#number_porting_wrapper';
 const NUMBER_NEXT_BTN = '[data-testid=number-porting--next-step-btn]'
+const ITEM_NAME_OVER_VIEW_PAGE = '.js-item-name';
+
 //METHODS TO GET LOCATORS
 const acceptCookiesAtDashBoard = () => cy.get(ACCEPT_COOKIES_AT_DASHBOARD);
 const productPhone = () => cy.get(PRODUCT_PHONE);
@@ -81,6 +83,7 @@ const fillHousingCost = () => cy.get(FILL_HOSEING_COST)
 const fillNetincome = () => cy.get(FILL_NET_INCOME)
 const submitApplicationBtn = () => cy.get(SUBMIT_APPLICATION_BTN)
 const numbernextBtn = () => cy.get(NUMBER_NEXT_BTN)
+const itemNameOverViewPage = () => cy.get(ITEM_NAME_OVER_VIEW_PAGE)
 
 
 //EXPORT METHODS 
@@ -90,5 +93,5 @@ module.exports = {
     fillEmailId, selectGenderRadioBtn, fillInitialName, fillLastName, fillDateOfBirth, fillContractingPartyCellPhoneNo,
     selectInvoiceAddressCountry, fillPostalCode, fillHouseNumber, fillIdentificationNo, verifyStreatName, verifyAddressSameAsBilling,
     selectNationality, selectIdentityType, fillIdExpiryDate, fillBankAccount, submitFormBtn, verifynumberportingPagetitle, selectFamilyType, fillHousingCost,
-    fillNetincome, submitApplicationBtn, numbernextBtn
+    fillNetincome, submitApplicationBtn, numbernextBtn, itemNameOverViewPage
 }
